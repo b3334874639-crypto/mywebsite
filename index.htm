@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>🔥 Pro Website</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(45deg, black, #1a1a1a);
+    color: white;
+    text-align: center;
+}
+
+/* Animation */
+h1 {
+    margin-top: 80px;
+    color: gold;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px gold; }
+    to { text-shadow: 0 0 30px red; }
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+#gameBox {
+    margin-top: 30px;
+}
+
+#chatBox {
+    margin-top: 30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🔥 PRO WEBSITE 😎</h1>
+<p>Welcome bro — next level site 🚀</p>
+
+<!-- GAME -->
+<div id="gameBox">
+<h2>🎮 Guess Game</h2>
+<input type="number" id="guess" placeholder="1-5">
+<button onclick="playGame()">Play</button>
+<p id="result"></p>
+</div>
+
+<!-- AI CHAT -->
+<div id="chatBox">
+<h2>🤖 AI Chat</h2>
+<input type="text" id="msg" placeholder="Type something">
+<button onclick="chat()">Send</button>
+<p id="reply"></p>
+</div>
+
+<script>
+// GAME
+function playGame() {
+    let ai = Math.floor(Math.random() * 5) + 1;
+    let user = document.getElementById("guess").value;
+
+    if(user == ai){
+        document.getElementById("result").innerText = "🎉 You Win!";
+    } else {
+        document.getElementById("result").innerText = "❌ AI was " + ai;
+    }
+}
+
+// FAKE AI CHAT
+function chat() {
+    let msg = document.getElementById("msg").value;
+    let reply = "🤖 I am AI, you said: " + msg;
+
+    document.getElementById("reply").innerText = reply;
+}
+</script>
+
+</body>
+</html>
